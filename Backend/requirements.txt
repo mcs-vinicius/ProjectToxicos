@@ -4,4 +4,5 @@ Flask
 Flask-Cors
 Werkzeug
 gunicorn
-psycopg2-binary # Driver para conectar Python com PostgreSQL
+psycopg2-binary
+gevent
