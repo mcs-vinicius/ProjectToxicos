@@ -6,9 +6,10 @@
   flex-direction: column;
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 470px;
   background-color: transparent;
   overflow: hidden;
+  top: -35px;
 }
 
 
