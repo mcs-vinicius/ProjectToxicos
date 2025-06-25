@@ -1,0 +1,7 @@
+# Backend/requirements.txt
+
+Flask
+Flask-MySQLdb
+Flask-Cors
+Werkzeug
+gunicorn # Servidor de produção para Flask

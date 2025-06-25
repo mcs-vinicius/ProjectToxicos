@@ -1,0 +1,76 @@
+/* NAVBAR */
+.navsup{
+
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: rgba(10, 25, 47, 0.8); /* Fundo semi-transparente */
+  border-bottom: 1px solid #00ffff; /* Linha neon na base */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(5px); /* Efeito de vidro fosco */
+  
+  /* Mantém a navbar no topo ao rolar a página */
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  
+  /* Garante que o padding não aumente a largura total */
+  box-sizing: border-box; 
+  
+  /* Fonte futurista (necessário ter o link no index.html) */
+  font-family: 'Chakra Petch', sans-serif;
+    
+  flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+    padding: 15px 20px; /* Reduz o padding lateral */
+    justify-content: space-around; /* Espaça melhor os itens */
+    
+}
+
+/* Botão Menu Navbar */
+.btt-menu {
+  font-size: 18px;
+  color: #e1e1e1;
+  font-family: inherit;
+  font-weight: 750;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+
+  font-size: 16px; /* Reduz o tamanho da fonte dos botões */
+    margin-bottom: 10px; /* Adiciona espaço caso quebre a linha */
+}
+
+.btt-menu:focus,
+.btt-menu:hover {
+  color: #fff;
+}
+
+.btt-menu:focus:after,
+.btt-menu:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.btt-menu:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+

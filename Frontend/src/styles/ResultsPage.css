@@ -1,0 +1,308 @@
+/* --- Fonte e Animações Globais --- */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&display=swap');
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(110%);
+  }
+}
+
+/* --- Estilos Gerais e Tema Holo --- */
+body {
+  /* Fundo escuro com um grid sutil */
+  background-color: #02040a;
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  color: #e0fbfc; /* Texto principal em tom ciano claro */
+  font-family: 'Chakra Petch', sans-serif;
+  overflow-x: hidden; /* Previne scroll horizontal */
+}
+
+/* Efeito de scanline na tela inteira */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background: linear-gradient(to bottom, rgba(0, 255, 255, 0) 0%, rgba(0, 255, 255, 0.1) 50%, rgba(0, 255, 255, 0) 100%);
+  animation: scanline 10s linear infinite;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.container {
+  max-width: 1200px;
+  top: 120px;
+  margin: auto;
+  padding: 30px;
+  background-color: rgba(10, 25, 47, 0.8); /* Fundo semi-transparente */
+  border: 1px solid #00ffff; /* Borda Ciano Neon */
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), inset 0 0 20px rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(5px); /* Efeito de vidro fosco */
+  position: relative;
+  animation: fadeIn 1s ease-out;
+}
+
+/* --- Cantoneiras Decorativas --- */
+.container::before, .container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-color: #ff00ff; /* Magenta para destaque */
+  border-style: solid;
+  z-index: 2;
+}
+.container::before {
+  top: -5px; left: -5px;
+  border-width: 2px 0 0 2px;
+}
+.container::after {
+  bottom: -5px; right: -5px;
+  border-width: 0 2px 2px 0;
+}
+
+
+/* --- Tipografia e Títulos --- */
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+  margin-bottom: 20px;
+}
+
+.season-info {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+  color: #00ffff;
+  border: 1px dashed rgba(0, 255, 255, 0.3);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* --- Tabelas Holo --- */
+.tables-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.table-wrapper {
+  flex: 1;
+  min-width: 400px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.table-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: rgba(0, 255, 255, 0.1);
+  padding: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+thead tr {
+  background-color: transparent;
+  color: #00ffff;
+  font-weight: 600;
+}
+
+td:nth-child(2) { text-align: left; }
+
+tbody tr {
+  transition: background-color 0.3s ease;
+}
+tbody tr:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* --- Coluna Evolução Neon --- */
+.evolution-positive {
+  color: #00ff00; /* Verde Neon */
+  font-weight: bold;
+  text-shadow: 0 0 5px #00ff00;
+}
+.evolution-negative {
+  color: #ff2d55; /* Rosa/Vermelho Neon */
+  font-weight: bold;
+  text-shadow: 0 0 5px #ff2d55;
+}
+.evolution-neutral {
+  color: rgba(224, 251, 252, 0.6);
+}
+
+/* --- Paginação Futurista --- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'Chakra Petch', sans-serif;
+  color: #00ffff;
+  background-color: transparent;
+  border: 2px solid #00ffff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #00ffff;
+  color: #02040a;
+  box-shadow: 0 0 20px #00ffff;
+}
+
+.pagination button:disabled {
+  color: rgba(0, 255, 255, 0.3);
+  border-color: rgba(0, 255, 255, 0.3);
+  cursor: not-allowed;
+}
+
+/* ... outros estilos ... */
+
+/* --- Estilo para participantes inativos --- */
+.inactive-participant td {
+  color: rgba(224, 251, 252, 0.4);
+  font-style: italic;
+  
+}
+
+/* --- Estilo para o rodapé da tabela (Total) --- */
+tfoot tr {
+    background-color: rgba(0, 255, 255, 0.1);
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.txtcenter{
+  display: flex;
+  justify-content: center;
+}
+
+/* ResultsPage.css */
+/* ... (estilos existentes) ... */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+        top: 80px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .tables-container {
+        flex-direction: column; /* Empilha as tabelas */
+        gap: 40px;
+    }
+    
+    .table-wrapper {
+        min-width: unset; /* Remove a largura mínima */
+    }
+
+    /* Adaptação da tabela para layout de cards */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr {
+        border: 1px solid rgba(0, 255, 255, 0.2);
+        margin-bottom: 15px;
+    }
+    
+    td {
+        border: none;
+        border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        position: relative;
+        padding-left: 50%;
+        text-align: right; /* Alinha o valor à direita */
+    }
+    
+    td:before {
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left; /* Alinha o rótulo à esquerda */
+        font-weight: bold;
+        color: #00ffff;
+    }
+
+     .leftlabel{
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Adicionar os rótulos via CSS */
+    .table-wrapper:first-child td:nth-of-type(1):before { content: "Posição"; }
+    .table-wrapper:first-child td:nth-of-type(2):before { content: "Nome"; }
+    .table-wrapper:first-child td:nth-of-type(3):before { content: "Fase de Acesso"; }
+    .table-wrapper:first-child td:nth-of-type(4):before { content: "Evolução"; }
+    
+    .table-wrapper:last-child td:nth-of-type(1):before { content: "Posição"; }
+    .table-wrapper:last-child td:nth-of-type(2):before { content: "Nome"; }
+    .table-wrapper:last-child td:nth-of-type(3):before { content: "1ª Rodada"; }
+    .table-wrapper:last-child td:nth-of-type(4):before { content: "2ª Rodada"; }
+    .table-wrapper:last-child td:nth-of-type(5):before { content: "3ª Rodada"; }
+    .table-wrapper:last-child td:nth-of-type(6):before { content: "Total"; }
+}
